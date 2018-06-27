@@ -1,0 +1,42 @@
+<h2>Reactive Form</h2>
+<form [formGroup]="reactiveForm">
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" formControlName="email">
+    <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+      Email is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email confirm</label>
+    <input type="email" class="form-control" formControlName="emailConfirm">
+    <div class="text-danger" *ngIf="emailConfirm.invalid && (emailConfirm.dirty || emailConfirm.touched)">
+      <div *ngIf="emailConfirm.errors['required']">Email confirm is required</div>
+      <div *ngIf="emailConfirm.errors['compare']">Email confirm do not match</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" formControlName="password">
+    <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+      Password is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Password confirm</label>
+    <input type="password" class="form-control" formControlName="passwordConfirm">
+    <div class="text-danger" *ngIf="pwConfirm.invalid && (pwConfirm.dirty || pwConfirm.touched)">
+      <div *ngIf="pwConfirm.errors['required']">Password confirm is required</div>
+      <div *ngIf="pwConfirm.errors['compare']">Password confirm do not match</div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" [disabled]="reactiveForm.invalid">Submit</button>
+</form>
+<br>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Form status: {{reactiveForm.status}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Form Value</h6>
+    <pre>{{reactiveForm.value | json}}</pre>
+  </div>
+</div>
