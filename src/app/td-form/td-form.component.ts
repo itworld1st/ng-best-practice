@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UserService } from '../shared/user.service';
+
 @Component({
   selector: 'app-td-form',
   templateUrl: './td-form.component.html',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TdFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getUsers().subscribe();
   }
 
 }

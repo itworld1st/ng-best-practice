@@ -4,7 +4,8 @@
     <label>Email</label>
     <input type="email" class="form-control" formControlName="email">
     <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
-      Email is required
+      <div *ngIf="email.errors['required']">Email is required</div>
+      <div *ngIf="email.errors['uniqueEmail']">Email already exists</div>
     </div>
   </div>
   <div class="form-group">
@@ -13,6 +14,7 @@
     <div class="text-danger" *ngIf="emailConfirm.invalid && (emailConfirm.dirty || emailConfirm.touched)">
       <div *ngIf="emailConfirm.errors['required']">Email confirm is required</div>
       <div *ngIf="emailConfirm.errors['compare']">Email confirm do not match</div>
+      <div *ngIf="emailConfirm.errors['uniqueEmail']">Email confirm already exists</div>
     </div>
   </div>
   <div class="form-group">

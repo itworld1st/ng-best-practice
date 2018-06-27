@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { compareValidator } from '../shared/compare-validator.directive';
+import { UserService } from '../shared/user.service';
+import { uniqueEmailValidator } from '../shared/unique-email-validator.directive';
 
 @Component({
   selector: 'app-reactive-form',
@@ -11,7 +13,7 @@ import { compareValidator } from '../shared/compare-validator.directive';
 export class ReactiveFormComponent implements OnInit {
   reactiveForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit() {
     this.createForm();
@@ -19,8 +21,14 @@ export class ReactiveFormComponent implements OnInit {
 
   createForm() {
     this.reactiveForm = this.fb.group({
-      email: ['', Validators.required],
-      emailConfirm: ['', [Validators.required, compareValidator('email')]],
+      email: ['',
+        Validators.required, // sync validator
+        uniqueEmailValidator(this.userService) // async validator
+      ],
+      emailConfirm: ['',
+        [Validators.required, compareValidator('email')], // sync validator
+        uniqueEmailValidator(this.userService) // async validator
+      ],
       password: ['', Validators.required],
       passwordConfirm: ['', [Validators.required, compareValidator('password')]]
     });
