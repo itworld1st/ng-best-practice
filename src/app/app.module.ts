@@ -9,6 +9,7 @@ import { CompareValidatorDirective } from './shared/compare-validator.directive'
 import { TdFormComponent } from './td-form/td-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { UniqueEmailValidatorDirective } from './shared/unique-email-validator.directive';
+import { UniqueUsernameValidatorDirective } from './shared/unique-username-validator.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UniqueEmailValidatorDirective } from './shared/unique-email-validator.d
     CompareValidatorDirective,
     TdFormComponent,
     ReactiveFormComponent,
-    UniqueEmailValidatorDirective
+    UniqueEmailValidatorDirective,
+    UniqueUsernameValidatorDirective
   ],
   imports: [
     BrowserModule,

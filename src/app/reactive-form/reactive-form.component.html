@@ -1,6 +1,13 @@
 <h2>Reactive Form</h2>
 <form [formGroup]="reactiveForm">
   <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" formControlName="username">
+    <div class="text-danger" *ngIf="username.invalid && (username.dirty || username.touched)">
+      Username already exists
+    </div>
+  </div>
+  <div class="form-group">
     <label>Email</label>
     <input type="email" class="form-control" formControlName="email">
     <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
