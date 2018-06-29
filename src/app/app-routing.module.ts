@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TdFormComponent } from './td-form/td-form.component';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { HomeComponent } from './core/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: TdFormComponent },
-  { path: 'reactiveform', component: ReactiveFormComponent }
+  { path: '', component: HomeComponent }
 ];
 
 @NgModule({
