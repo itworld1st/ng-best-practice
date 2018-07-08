@@ -6,7 +6,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DemoComponent } from './demo.component';
 
 const routes: Routes = [
-  { path: 'demo', component: DemoComponent, children: [
+  { path: '', component: DemoComponent, children: [
     { path: '', component: TdFormComponent },
     { path: 'reactiveform', component: ReactiveFormComponent }
   ] }

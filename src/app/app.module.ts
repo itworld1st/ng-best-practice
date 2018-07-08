@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DemoModule } from './demo/demo.module';
 import { CoreModule } from './core/core.module';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    DemoModule,
     CoreModule
   ],
   providers: [],
