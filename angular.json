@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootswatch/dist/materia/bootstrap.css",
               "src/styles.css"
             ],
             "scripts": []
