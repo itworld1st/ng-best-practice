@@ -8,6 +8,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
 import { GlobalErrorHandler } from './global-error-handler.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { GlobalErrorHandler } from './global-error-handler.service';
     HomeComponent,
     NavMenuComponent,
     FooterComponent,
-    ErrorComponent
+    ErrorComponent,
+    NotFoundComponent
   ],
   exports: [
     NavMenuComponent,
